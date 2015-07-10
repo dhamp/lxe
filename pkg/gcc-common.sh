@@ -23,6 +23,8 @@
         SetCrossToolchainPath
         DeleteGCCSymlinks
         unset cc CC cxx CXX
+        export CC=gcc-4.8
+        export CXX=g++-4.8
         ConfigurePkg \
             ${GCC_CONFIGURE_OPTS} \
             --enable-languages=c,c++ \

@@ -279,7 +279,7 @@ PrepareBuild()
 CopySrcAndPrepareBuild()
 {
     if [ -z "${PKG_SUBDIR_ORIG}" ]
-    then 
+    then
         cp -afT "${PKG_SRC_DIR}/${PKG_SUBDIR}" "${BUILD_DIR}/${PKG_SUBDIR}"
     else
         cp -afT "${PKG_SRC_DIR}/${PKG_SUBDIR_ORIG}" "${BUILD_DIR}/${PKG_SUBDIR}"
@@ -296,7 +296,7 @@ ConfigurePkg()
     local LOG_FILE="${LOG_DIR}/${PKG_SUBDIR}/configure.log"
     cd "${BUILD_DIR}/${PKG_SUBDIR}"
     if [ -z "${PKG_SUBDIR_ORIG}" ]
-    then 
+    then
         "${PKG_SRC_DIR}/${PKG_SUBDIR}/configure" ${@} &>> "${LOG_FILE}"
     else
         "${PKG_SRC_DIR}/${PKG_SUBDIR_ORIG}/configure" ${@} &>> "${LOG_FILE}"
@@ -308,12 +308,12 @@ ConfigurePkgInBuildDir()
 {
     local LOG_FILE="${LOG_DIR}/${PKG_SUBDIR}/configure.log"
     cd "${BUILD_DIR}/${PKG_SUBDIR}"
-    if [ -f autogen.sh ]
-    then
-    ./autogen.sh ${@} & >> ${LOG_FILE}
-    else
+    #if [ -f autogen.sh ]
+    #then
+    #./autogen.sh ${@} & >> ${LOG_FILE}
+    #else
     ./configure ${@} &>> "${LOG_FILE}"
-    fi
+    #fi
     CheckFail "${LOG_FILE}"
 }
 

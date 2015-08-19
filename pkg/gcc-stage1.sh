@@ -24,8 +24,9 @@
         UnsetCrossToolchainVariables
         SetCrossToolchainPath
         DeleteGCCSymlinks
-        export CC=gcc-4.8
-        export CXX=g++-4.8
+        export CC=gcc-4.9
+        export CXX=g++-4.9
+        #export CFLAGS="${CFLAGS} -std=gnu99"
         ConfigurePkg \
             ${GCC_CONFIGURE_OPTS} \
             --enable-languages=c \

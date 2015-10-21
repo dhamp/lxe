@@ -308,12 +308,7 @@ ConfigurePkgInBuildDir()
 {
     local LOG_FILE="${LOG_DIR}/${PKG_SUBDIR}/configure.log"
     cd "${BUILD_DIR}/${PKG_SUBDIR}"
-    #if [ -f autogen.sh ]
-    #then
-    #./autogen.sh ${@} & >> ${LOG_FILE}
-    #else
     ./configure ${@} &>> "${LOG_FILE}"
-    #fi
     CheckFail "${LOG_FILE}"
 }
 

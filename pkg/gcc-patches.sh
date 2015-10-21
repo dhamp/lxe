@@ -4,7 +4,6 @@
     [ ! -z "${PKG_SUBDIR_ORIG}" ] && \
         SUBDIR="${PKG_SUBDIR_ORIG}" || \
         SUBDIR="${PKG_SUBDIR}"
-
     PATCH_FILE="${PKG_DIR}/gcc-${PKG_VERSION}.patch"
     if [ -e "${PATCH_FILE}" ]
     then

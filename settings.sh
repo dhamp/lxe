@@ -35,4 +35,5 @@ CLEAN_SRC_DIR=true
 # Delete files from "build/" sub-directory after successful build of the package (true/false):
 CLEAN_BUILD_DIR=true
 
-source ./settings.sh.mine
+LOCAL_SETTINGS_FILE=./settings.sh.mine
+[[ -f ${LOCAL_SETTINGS_FILE} ]] && source ${LOCAL_SETTINGS_FILE}

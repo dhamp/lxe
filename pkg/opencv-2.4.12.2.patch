@@ -1,0 +1,20 @@
+--- a/CMakeLists.txt	2015-09-17 14:02:36.000000000 +0300
++++ b/CMakeLists.txt	2016-02-18 19:22:22.627167480 +0300
+@@ -11,6 +11,8 @@
+ 
+ set(CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS true)
+ 
++if(OPENCV_DEVS_BROKE_CROSS_COMPILE)
++
+ # Following block can broke build in case of cross-compilng
+ # but CMAKE_CROSSCOMPILING variable will be set only on project(OpenCV) command
+ # so we will try to detect crosscompiling by presense of CMAKE_TOOLCHAIN_FILE
+@@ -28,6 +30,8 @@ else(NOT CMAKE_TOOLCHAIN_FILE)
+   set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install" CACHE PATH "Installation Directory")
+ endif(NOT CMAKE_TOOLCHAIN_FILE)
+ 
++endif()
++
+ # --------------------------------------------------------------
+ # Top level OpenCV project
+ # --------------------------------------------------------------

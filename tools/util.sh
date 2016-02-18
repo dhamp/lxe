@@ -326,7 +326,7 @@ ConfigureCmakeProject()
     local LOG_FILE="${LOG_DIR}/${PKG_SUBDIR}/configure.log"
     local CMAKE_TOOLCHAIN_FILE="${SYSROOT}/usr/share/cmake/${SYSTEM}.config.cmake"
     cd "${BUILD_DIR}/${PKG_SUBDIR}"
-    cmake -DCMAKE_TOOLCHAIN_FILE="${CMAKE_TOOLCHAIN_FILE}" ${@} &>> "${LOG_FILE}"
+    cmake "${PKG_SRC_DIR}/${PKG_SUBDIR}" -DCMAKE_TOOLCHAIN_FILE="${CMAKE_TOOLCHAIN_FILE}" ${@} &>> "${LOG_FILE}"
     CheckFail "${LOG_FILE}"
 }
 
